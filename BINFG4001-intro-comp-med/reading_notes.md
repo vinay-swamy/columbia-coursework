@@ -39,3 +39,36 @@
 - not just clinicians can benefit from DSS; supporting car workers, hospital admin etc can also use clinical/genomic data to make decisions 
 - a tool is only a good tool if it can change outcomes
 - admin needs to stop looking to cut costs in the IT dept
+
+## Week two
+
+### Cimmino 1998 - challenges in creating standardized medical terminology
+- more of a define the problem paper, rather than talk about specific solutions or implementations 
+- currently medical terminology is not working super well, for multiple reasons, some of which are hard to define 
+- big problem is lack of expressiveness, ie missing terminology in the vocab corpus
+- and so the ability for a vocab system to be able to grow is paramount
+- Vocab should be centered around concepts
+- This introduces the problems of hierarchy - concepts can be conceputally hierarchical, but individial concepts can be part of multiple hiearchies 
+- A semantic graph- nodes are concepts edges are relationships between concepts. relationships are strict verbs, ie "caused by"  "treated by 
+- the relational nature of a vocab should allow for differerent levels of granularity
+- vocab should also have a context, ie background info from why a specific term was used 
+- when a vocab grows, there needs to be a way to tie togehter differnet references of the same concept( ideally in a way that is systamatic, without complete enumeration of all possible references )
+- Fig1 - differenty types of conceptual hierarchy 
+- Fig2 a semantic graph 
+- fig3 example of the same concept evolving across time, haivng both an old way of description and a new way 
+
+## Rector-1999 challenges in creating standardized medical terminology, but again 
+- terminology is not meant to be a diagnostic framework, in the sense does not explicitly need to encode inference within the terminology; however, causal relationships will need to be implicitly encoded within the terminology 
+- terminology is part of the EHR; use of the terminology use should be seamless, abtracted from in the person inputing the data ; data should be be structured, and queryable  ;terminological data needs to be shared and shared securely across the web;
+- terminology can be used to *inform*  decisions on patients, populations, and instituions
+- the potential space of medical terminology is enormous - complete enumerations of every scenerio is impossible
+- terminology needs to be able to describe clinical concepts(clinical linguistics), be able to be composed to express relationships between concepts(clinical pragmatics), and be interpretable by machines (logical concept representation)
+- language carries conceptual baggage that needs to taken into account when designing terminologies 
+- as always, the hiearchichal and relational structure of clinical concepts is simply a difficult task 
+- terminology needs the ability to incorporate new information, ie synthesize existing concepts into new ones 
+- lack of clinical consensus creates an unavoidable variance in terminology usage, with the same concepts being reffered to in different ways
+- incorporating existing terminologies - which are an enormous source of data - with new terminologies is also a difficult task 
+- key idea: hypothesis of separability: "For a clinical terminology, the representation of concepts and the relations between them can and should be separated from the linguistic knowledge
+about how these concepts are expressed in language and the pragmatic knowledge concerning how these concepts are used in dialogues with clinical users."
+    - encompases much of what was talked about earlier
+
