@@ -72,3 +72,31 @@
 about how these concepts are expressed in language and the pragmatic knowledge concerning how these concepts are used in dialogues with clinical users."
     - encompases much of what was talked about earlier
 
+## Chute-2005  difficulties of medical terminology, part 3( ;(  )
+- Medical terminology, in it current combination of natural language, formal codes, lab tests, EHR etc likely has some sort of latent representation, that is machine readable, but identifying these *de novo* or trying to make one from scratch is very difficult 
+- formalization is more useful on the decsion support end, ie between clinicians and a researcher/institution, rather than between clinicians 
+- bear in mind all these were written pre-BERT
+- equivalency of concepts is also a big problem ie chemical name vs trade name for drugs 
+- terminology has varying levels of certainty depending on the patient, ie for a patients just beginning treatment, doctor is not sure what exactly it might be so writes down a ton of stuff
+- genomics/transcriptomics may help with the disambiguity of pure language 
+- conventional terminology  often has collisons between subspecialties of medcine, 
+- ontology vs terminology - ontology is a more rigrous, logic driven conceptual system,  individual concepts are very low-level; terminologies are less formal terminologies, based more on natural language, with individual terms being more descriptive 
+- amount of granularity in a system is also another big issue, see above for more reasons why
+- While a less granular terminology is easier on the user, a more granular one is better for usbaility
+    - Aggregetion logics could be a way to automatically convert highly granular data into 
+- there won't ever be a single absolute terminology, so thesauri for translating between terminologies will also be necessary 
+ 
+## Balkyani
+- just one pager - TLDR: the phrase "medical concept" is used less in the literature, in favor of semantics and ontology
+
+## Cimino 2005
+- the idea of a controlled terminology vs a universal; universal is a generalization about a group of things, or a set of instances in reality
+- ie Earth == term, planet that goes around the sun == universal 
+- then, by using a combination of universals, we can get more granular on an object ie planets orbiting the Sun AND planets with life == Earth 
+- in the medical ontological sense, a universal need not even have a linguistic meaning, but could be inferred or derived from data
+- Smith (the proponent of universals ) then proposes that you can chain together universals, over the course of a patient event, to get a unique set of terminolgies specific to a patient 
+- argument against universas is that you can encode things that make no sense 
+- as as aside, it does kind of feel like these systems are trying to do too much, almost trying to replace the doctor
+- universals rely on concepts being static, and would not hold up well to a dynamic concept
+- "the purpose of terminologies is to support the recording and use of actual data, rather than primarily as a pure knowledge base of what is known in biomedicine"
+
