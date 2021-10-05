@@ -100,3 +100,112 @@ about how these concepts are expressed in language and the pragmatic knowledge c
 - universals rely on concepts being static, and would not hold up well to a dynamic concept
 - "the purpose of terminologies is to support the recording and use of actual data, rather than primarily as a pure knowledge base of what is known in biomedicine"
 
+## Week 3
+Questions for the week
+
+•    **What is an ontology?**
+•    **How might ontologies help achieve semantic interoperability?**
+•    **Please identify an example of a successful ontology that helps improve the semantic interoperability for a particular domain.**
+•    **What roles do ontologies play in biomedical discoveries?**
+
+
+### Bodenreider-2005 Background on medical terminology
+- terminology: controlled set of terms used to describe some field, ie biomedical science
+- ontology: the stratification of terminologies into classes, and relationships between these classes 
+- there are different classes of ontologies
+    - general: not specific to a field(apparently physics can be considered an ontology)
+    - domain: specific to a cerrtain field 
+    - reference: sharable module of knowledge; can be composed together for formation of new ontologies 
+#### Example terminologies
+these two are general ontologies, with biomedical sub-groups
+- OpenCyc: 1 mil terms, which are divided into groups of microtheories
+- WordNet: based on synsets - sets of synonyms for concepts; contains ~114k terms, arranged in a poly-hierarchy 
+these ones are ontologies built exclusively for medicine 
+- GALEN: re-usable terminology for medical systems; allows terms to be composed together via combination of phenomenons and modifer concepts 
+- UMLS: combination of the Metathesaurus, and Semantic network;
+    - Metathesaurus: repository of concepts, integrates terms from over 100 sources, over 1mil concepts
+    - Semantic network: ontology based on metathesaurus; source agnostic - structures terms within the metathesaurus into 135 semantic types; contains associative relationships
+- SNOMED CT: "most comprehensive biomedical terminology" ; have multiple related terms organized into concepts, structuerd in a polyhierarchy; 18 major hierarchies, which can be linked to gether for associative relationships 
+- FMA: a general ontology focused on human anatomy, to support the  UMLS; uses two existing general ontologies on physical states and spatial ontologies(3d shpae boundaries, volumes etc) to formaly define huma anatomy
+- MENELAS: ontology initally designed for coronary artery disease; organizes terms in concepts, and links them with relational types; makes distinction between real and abstract ideas 
+
+#### Case Study: Blood
+Paper goes through an example of how blood is described in different ontologies. 
+While all have a roughly similar hierarchy, the major difference is that FMA and SNOMED classify blood as a body subtance, whereas it is a tissue in UMLS and MENELAS; because of these two differences, the functional relationships between blood and other terms is fairly different; TLDR, its hard to align multiple different hierarchies together 
+
+### Joy-01 Designing an ontology
+
+#### Designing an ontology
+1. Determine the domain and scop of ontology
+    a. Use competency questions - specific task/questions ontology be able to solve - to help define domain and scope
+2. If possible, re-use an existing ontology 
+3. Identify important terms in the ontology
+4. Define the classes and what the organizational hierarchy is; Classes are generally real-world objects/ tangible thing; classes can have attributes aka slots attached to them, A specific instance of a class + its slots can be considered a specific concept
+    a. Top down: Start general > get more specific
+    b. Bottom up: start specific > collapse into more general terms 
+    c. Combination: a+b
+5. Define properties of classes(slots)
+    a. slots need not be specific to class, many classes can have the same slot, 
+6. Define preoperties slots(facets)
+    a. Slots can take one or more values; slots can be instances of other classes
+    b. Range of slot of type `instance`: all valid classes allowed within the slots
+    c. Domain of a slot: all classes that have a specific slot 
+7. Create specific instances(these specific instances are concepts )
+
+#### Defining classes and class hierarchy 
+- the "is a" relationship generally means that one class is a subclass of anothe, ie if B is_a A  then B \in A; hierarchy is transititve 
+- classes should be conceptually atomic; linguistic synonyms should map to the same class
+- avoid class cycles
+- siblings of a single class should conceptually be similar to each other
+- some intermediate classe can be "abstract", and can be marked as such to prevent actual instances of it from being generated
+- multiple inheritance -  a class can inherit from two or more parents(this creates a poly-hierarchy )
+- disjoint classes: two classes who's set of children do not overlap at all 
+- Try not to make class hierarchies too wide or too deep 
+- when designing an ontology, when decided whether to make a concept a class or a slot, remember that Ontologies are meant to reflect real-world relationships; for example, in an ontology about wine, should `white_wine` be a distinct class, or should it be `wine(color = 'white')`
+- avoid cases where there is a forward and reverse association(slot) between classes; ex: in wine example `Winery produces wine ` and `wine made_by winery` are functionally the same relationship, keep relations flowing in a single direction in the hierarchy 
+
+### Suchman-1994 computer-supported cooperative work(CSCW) 
+- bias permeates a system regardless of the creator's intent
+
+### Levesque-1987 Knowledge representations
+- The more complicated a terminology is, the harder it is to computationally operate on
+- aka hard things are hard 
+- knowledge representations are computational representations of natural/physical/semantic knowledge 
+    - KRs need to be domain focused 
+    - KRs need the ability to express concepts and relationships 
+
+- focuses on the Knowledge base as an example of a KR
+- Uses first order logic(FOL) as an example for how a KB can be queried(its kinda confusing tbh), but from what I can tell, you have 
+    - non-symbolic ideas that are connected to each other
+    - connected ideas can be queried/analyzed by logical symbols, but not sure if connections are themselves logical symbols 
+- Basically, the idea is that if you have a KR on a topic, you can *theoretically* use it query specific scenarios 
+- this becomes hard because you are essentially going to be making some sort of pseudo - decision tree
+    - they call it theorem proving, ie asking a certain relationsip possible -> Y/N
+- simplest version of this  would be having data structred in some sort of relational database, that you would then query 
+    - but anything you want to query 
+
+## Week 4 
+•    **What are the key considerations when evaluating a medical concept representation?**
+•    **What are the differences in terminologies and ontologies when representing medical concepts?**
+•    **What is the challenge of semantic interoperability?**
+•    **What makes medical concept representation difficult?**
+•    **Why do we need interface terminologies? What problems were they created to address?**
+
+### Humphreys-1996 Beta Test UMLS
+- NLM has a test/contest thingy to get instituions to use the UMLS metathesaurus
+- basically a descirption of the availablility of terms and ontologies within the metathesarus 
+- basicallly they are telling people to fuck around with the UMLS and find out if its good enough; "crowdsourced auditing" in the context of this weeks material 
+
+### Humphreys-1997 results of the UMLS beta test
+
+
+### Kanter-2008 EHR in AFrica
+-  the standard terminologies of typically ontologies are not in an easily usable format by providers 
+- Note that this before the obama era push for EHR adoption 
+- Chute's definition of terminology: “that which enables users to invoke a set of controlled terms that correspond to formal concepts organized by a classification schema.”
+- Interface terminologies make it easy to use terminology 
+- the mapping between interface  terms and refernence terms should ideally be lossless, and  seamless
+- they give a good exapmle with asthma - the commonly used description for asthma(in the interface terminology) doest have a snomed term; so map the interface term to a place holder, then change it under the hood once the term becomes available 
+- why talk aabout africa? There are many languages spoken, so an optimal solution for implementing a medical terminology system would be to have multiple interface terminologies for the same gold standard reference terminology
+- Basically the authors are starting a non-profit to help do what they talked about 
+
