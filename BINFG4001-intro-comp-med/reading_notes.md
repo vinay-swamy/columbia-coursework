@@ -180,8 +180,8 @@ While all have a roughly similar hierarchy, the major difference is that FMA and
     - connected ideas can be queried/analyzed by logical symbols, but not sure if connections are themselves logical symbols 
 - Basically, the idea is that if you have a KR on a topic, you can *theoretically* use it query specific scenarios 
 - this becomes hard because you are essentially going to be making some sort of pseudo - decision tree
-    - they call it theorem proving, ie asking a certain relationsip possible -> Y/N
-- simplest version of this  would be having data structred in some sort of relational database, that you would then query 
+    - they call it theorem proving, ie asking a certain relationship possible -> Y/N
+- simplest version of this  would be having data structured in some sort of relational database, that you would then query 
     - but anything you want to query 
 
 ## Week 4 
@@ -205,7 +205,34 @@ While all have a roughly similar hierarchy, the major difference is that FMA and
 - Chute's definition of terminology: “that which enables users to invoke a set of controlled terms that correspond to formal concepts organized by a classification schema.”
 - Interface terminologies make it easy to use terminology 
 - the mapping between interface  terms and refernence terms should ideally be lossless, and  seamless
-- they give a good exapmle with asthma - the commonly used description for asthma(in the interface terminology) doest have a snomed term; so map the interface term to a place holder, then change it under the hood once the term becomes available 
-- why talk aabout africa? There are many languages spoken, so an optimal solution for implementing a medical terminology system would be to have multiple interface terminologies for the same gold standard reference terminology
+- they give a good example with asthma - the commonly used description for asthma(in the interface terminology) doest have a snomed term; so map the interface term to a place holder, then change it under the hood once the term becomes available 
+- why talk about africa? There are many languages spoken, so an optimal solution for implementing a medical terminology system would be to have multiple interface terminologies for the same gold standard reference terminology
 - Basically the authors are starting a non-profit to help do what they talked about 
 
+
+## Week 5
+•	**What is the origin of ICD?**
+•	**How were the categories of ICD initially developed?**
+•	**How is ICD-9 organized (e.g., what are the major categories)?**
+•	**What are the primary uses of ICD-9 codes?**
+•	**What are the design defects in ICD-9?**
+•	**What are the pros and cons for using ICD-9 as the international standard for coding medical information?**
+•	**Please nominate a paper that is not in the reading list about the limitation of ICD-9**
+•	**What is new in ICD-10?**
+    - more codes 68000 vs 13000
+    - questionably more confusing to use 
+•	**What are the barriers for adopting ICD-10?**
+
+### History of the development of the ICD
+- ICD grew out of the International List of causes of death, originally used for tracking mortality stats, in mid 1800's;
+- In the early 1900's it was revised to include descriptions of non-lethal diseases
+- this list was continually revised until 1946 when the name as changed to ICD (ICD6)
+
+### Benesch-1997 ICD 9 not good at describing neuro-vascular disorders
+- essentially, looked at a  cohort of patients across multiple institution, many of them had been coded wrong
+- neuro-vascular disorders have a broad range of phenotypes, so disease codes are difficult to apply 
+
+### Sarrazin-2012 Shortcomings of administrative terminologies(AKA ICD9)
+- "because administrative data are derived from claims sub-mitted by clinicians to receive payment, the selection of primary and secondary ICD-9-CM codes in administrative data is often driven by reimbursement policies."
+- how codes are used change over time, based on new information/ coding practices, and new codes are introduced
+- there are testing biases, ie testing more finds more cases that also become embedded in the EHR
